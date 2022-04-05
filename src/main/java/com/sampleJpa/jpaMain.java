@@ -7,6 +7,16 @@ import javax.persistence.Persistence;
 
 public class jpaMain {
 
+    // JPA의 장점
+    /**
+     1. 쓰기 지연
+     2. 동일성 보장
+     3. 지연 로딩
+     4. 변경 감지
+     5. 1차 캐시
+     */
+    
+    
     public static void main(String[] args){
         // 아래 들어가는 인자는 resources/META-INF/persistence.xml의 persistence-unit name을 넣어주면 된다.
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
