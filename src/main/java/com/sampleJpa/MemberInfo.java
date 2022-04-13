@@ -1,8 +1,7 @@
 package com.sampleJpa;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  JPA 관련 어노테이션 선언 시,
@@ -16,11 +15,31 @@ import javax.persistence.Table;
 
 @Entity
 public class MemberInfo {
-
     @Id
     private Long memberId;
-
+    @Column
     private String memberName;
+
+    private Integer age;
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+    @Lob
+    private String description;
+
+    public MemberInfo(){
+    }
+
+    public Long getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
+    }
 
     public String getMemberName() {
         return memberName;
@@ -30,11 +49,43 @@ public class MemberInfo {
         this.memberName = memberName;
     }
 
-    public Long getMemberId() {
-        return memberId;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public RoleType getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(RoleType roleType) {
+        this.roleType = roleType;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

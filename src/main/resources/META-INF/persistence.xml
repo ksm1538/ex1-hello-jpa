@@ -26,7 +26,16 @@
 
             <!-- 추가적인 주석을 표시 -->
             <property name="hibernate.use_sql_comments" value="true"/>
-            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+
+            <!-- DDL 자동 생성 관련 -->
+            <!--
+            create : 기존의 테이블을 삭제 후에 다시 생성 (DROP → CREATE)
+            create-drop : create와 같지만, 종료 시점에 테이블 DROP
+            update : 변경된 내용만 반영 (운영 DB에는 사용 X)
+            validate : 엔티티와 테이블이 정상적으로 매핑되었는 지 확인
+            none : 사용안함
+            -->
+            <property name="hibernate.hbm2ddl.auto" value="none" />
 
         </properties>
     </persistence-unit>
