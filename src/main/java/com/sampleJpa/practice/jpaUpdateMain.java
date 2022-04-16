@@ -1,11 +1,11 @@
-package com.sampleJpa;
+package com.sampleJpa.practice;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class jpaDeleteMain {
+public class jpaUpdateMain {
     public static void main(String[] args){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
@@ -21,8 +21,9 @@ public class jpaDeleteMain {
             System.out.println("아이디 : " + memberInfo.getMemberId());
             System.out.println("이름 : " + memberInfo.getMemberName());
 
-            // 멤버 삭제 (삭제 시에는 EntityManager를 이용함)
-            em.remove(memberInfo);
+            // 멤버의 이름을 수정
+            // 트랜잭션 내부에서 수정 시, 커밋할 때 변경된 값을 감지해서 알아서 수정함
+            memberInfo.setMemberName("changed Name");
 
             // 커밋
             et.commit();

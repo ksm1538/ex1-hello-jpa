@@ -1,6 +1,4 @@
-package com.sampleJpa;
-
-import org.hibernate.Transaction;
+package com.sampleJpa.practice;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
