@@ -23,7 +23,7 @@ public class jpaPersistenceContext {
         try {
             // 비영속 상태 (JPA를 이용해서 생성하거나 수정한 것이 아님)
             MemberInfo memberInfo = new MemberInfo();
-            memberInfo.setMemberId(5L);
+            memberInfo.setMemberId(2L);
             memberInfo.setMemberName("홍길동");
 
             // 영속 상태

@@ -14,9 +14,15 @@ import java.util.Date;
 // @Id : PK라는 의미
 
 @Entity
+@SequenceGenerator(
+        name="memberInfo_seq_generator",
+        sequenceName = "memberInfo_seq",
+        initialValue = 1, allocationSize = 50)
 public class MemberInfo {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "memberInfo_seq_generator")
     private Long memberId;
+
     @Column
     private String memberName;
 

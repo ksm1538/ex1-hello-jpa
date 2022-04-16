@@ -35,7 +35,7 @@
             validate : 엔티티와 테이블이 정상적으로 매핑되었는 지 확인
             none : 사용안함
             -->
-            <property name="hibernate.hbm2ddl.auto" value="none" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
 
         </properties>
     </persistence-unit>
