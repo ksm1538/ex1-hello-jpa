@@ -1,4 +1,4 @@
-package com.sampleJpa.jpabook.Main;
+package com.sampleJpa.jpabook.main;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
