@@ -26,10 +26,21 @@ public class Order {
     @OneToMany(mappedBy = "OrderItem")
     private List<OrderItem> orderItemList = new ArrayList<>();
 
+    @OneToOne
+    @JoinColumn(name="DELIVERY_ID")
+    private Delivery delivery;
 
     public void addOrderItem(OrderItem orderItem){
         orderItemList.add(orderItem);
         orderItem.setOrder(this);
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
     }
 
     public Long getId() {
