@@ -3,7 +3,7 @@ package com.sampleJpa.jpabook.entity;
 import javax.persistence.*;
 
 @Entity
-public class OrderItem {
+public class OrderItem extends BaseEntity{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="ORDER_ITEM_ID")
     private Long id;

@@ -1,12 +1,10 @@
 package com.sampleJpa.ex2.entity;
 
-import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-public abstract class BaseEntity {
+public abstract class BaseEntityTwo {
     private String writer;
     private LocalDateTime writeDt;
     private String modifier;

@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="TEAM_TWO")
-public class Team extends BaseEntity{
+public class Team extends BaseEntityTwo {
     @Id @GeneratedValue
     @Column(name = "TEAM_ID")
     private Long id;
