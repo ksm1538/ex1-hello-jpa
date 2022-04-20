@@ -1,5 +1,7 @@
 package com.sampleJpa.ex2.entity;
 
+import org.hibernate.annotations.Fetch;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +19,9 @@ public class Member extends BaseEntityTwo {
     @Column(name = "TEAM_ID")
     private Long teamId;
     */
-    @ManyToOne
+
+
+    @ManyToOne(fetch = FetchType.LAZY)    // 지연로딩
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
