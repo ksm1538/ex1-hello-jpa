@@ -1,14 +1,12 @@
 package com.sampleJpa.ex2.main;
 
-import com.sampleJpa.ex2.entity.Address;
+import com.sampleJpa.ex2.entity.AddressTwo;
 import com.sampleJpa.ex2.entity.Member;
-import com.sampleJpa.ex2.entity.Team;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class jpaMain_Embedded {
     public static void main(String[] args){
@@ -18,7 +16,7 @@ public class jpaMain_Embedded {
 
         tx.begin();
         try{
-            Address address = new Address("city", "street", "100000");
+            AddressTwo address = new AddressTwo("city", "street", "100000");
             Member mem1 = new Member();
             mem1.setName("네임");
             mem1.setAddress(address);

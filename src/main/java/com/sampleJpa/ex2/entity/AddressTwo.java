@@ -4,18 +4,18 @@ import javax.persistence.Embeddable;
 import java.util.Objects;
 
 @Embeddable
-public class Address {
+public class AddressTwo {
     private String city;
     private String street;
     private String zipcode;
 
-    public Address(String city, String street, String zipcode) {
+    public AddressTwo(String city, String street, String zipcode) {
         this.city = city;
         this.street = street;
         this.zipcode = zipcode;
     }
 
-    public Address() {
+    public AddressTwo() {
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Address {
             return true;
         if(o == null || getClass() != o.getClass())
             return false;
-        Address address = (Address) o;
+        AddressTwo address = (AddressTwo) o;
         return Objects.equals(city, address.city) && Objects.equals(street, address.street) && Objects.equals(zipcode, address.zipcode);
     }
 

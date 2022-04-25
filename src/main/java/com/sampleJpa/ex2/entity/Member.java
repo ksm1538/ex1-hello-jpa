@@ -1,9 +1,6 @@
 package com.sampleJpa.ex2.entity;
 
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -25,7 +22,7 @@ public class Member extends BaseEntityTwo {
 
     // 주소
     @Embedded
-    private Address address;
+    private AddressTwo address;
 
 
     // 외래키를 넣어서 사용하는 방식. 객체지향스럽지 않고 관계형 DB에 초점이 맞춰진 설계
@@ -50,7 +47,7 @@ public class Member extends BaseEntityTwo {
 
     @ElementCollection
     @CollectionTable(name="ADDRESS", joinColumns = @JoinColumn(name="MEMBER_ID"))
-    private List<Address> addressHistory = new ArrayList<>();
+    private List<AddressTwo> addressHistory = new ArrayList<>();
 
     public Period getPeriod() {
         return period;
@@ -60,11 +57,11 @@ public class Member extends BaseEntityTwo {
         this.period = period;
     }
 
-    public Address getAddress() {
+    public AddressTwo getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(AddressTwo address) {
         this.address = address;
     }
 
@@ -79,11 +76,11 @@ public class Member extends BaseEntityTwo {
         this.favoriteFoods = favoriteFoods;
     }
 
-    public List<Address> getAddressHistory() {
+    public List<AddressTwo> getAddressHistory() {
         return addressHistory;
     }
 
-    public void setAddressHistory(List<Address> addressHistory) {
+    public void setAddressHistory(List<AddressTwo> addressHistory) {
         this.addressHistory = addressHistory;
     }
 
