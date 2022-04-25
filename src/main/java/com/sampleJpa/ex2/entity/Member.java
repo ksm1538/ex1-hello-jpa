@@ -4,6 +4,10 @@ import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="MEMBER_TWO")
@@ -39,6 +43,14 @@ public class Member extends BaseEntityTwo {
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
+    @ElementCollection
+    @CollectionTable(name="FAVORITE_FOOD", joinColumns = @JoinColumn(name="MEMBER_ID"))
+    @Column(name="FOOD_NAME")
+    private Set<String> favoriteFoods = new HashSet<>();
+
+    @ElementCollection
+    @CollectionTable(name="ADDRESS", joinColumns = @JoinColumn(name="MEMBER_ID"))
+    private List<Address> addressHistory = new ArrayList<>();
 
     public Period getPeriod() {
         return period;
@@ -57,6 +69,22 @@ public class Member extends BaseEntityTwo {
     }
 
     public Member(){
+    }
+
+    public Set<String> getFavoriteFoods() {
+        return favoriteFoods;
+    }
+
+    public void setFavoriteFoods(Set<String> favoriteFoods) {
+        this.favoriteFoods = favoriteFoods;
+    }
+
+    public List<Address> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<Address> addressHistory) {
+        this.addressHistory = addressHistory;
     }
 
     public Locker getLocker() {
