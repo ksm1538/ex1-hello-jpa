@@ -47,7 +47,7 @@ public class JpaMain_Projection {
 
             // ===================== 스칼라 타입 프로젝션 =====================
             // Query & Object[] 타입으로 조회
-            List<Object[]> resultList2 = em.createQuery("SELECT DISTINCT m.username, m.age FROM Member m")
+            List<Object[]> resultList2 = em.createQuery("SELECT DISTINCT m.username, m.age FROM MemberJpql m")
                     .getResultList();
 
             Object[] result2 = resultList2.get(0);
@@ -57,7 +57,7 @@ public class JpaMain_Projection {
             // new 명령어로 조회
             // 생성자를 이용해서 넣어주기 때문에 생성자가 있어야함(순서와 타입이 일치하는 생성자가 필요힘)
             // 앞에 패키지명을 포함한 전체 클래스명을 입력해야함
-            List<MemberJpqlDto> resultList3 = em.createQuery("SELECT DISTINCT new jpql.entity.MemberJpqlDto(m.username, m.age) FROM Member m", MemberJpqlDto.class)
+            List<MemberJpqlDto> resultList3 = em.createQuery("SELECT DISTINCT new jpql.entity.MemberJpqlDto(m.username, m.age) FROM MemberJpql m", MemberJpqlDto.class)
                     .getResultList();
 
             MemberJpqlDto mjDto = resultList3.get(0);
