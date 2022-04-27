@@ -12,7 +12,7 @@ public class TeamJpql {
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "teamJpql")
     private List<MemberJpql> members = new ArrayList<>();
 
     public Long getId() {

@@ -10,10 +10,15 @@ public class MemberJpql {
     private String username;
     private int age;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="TEAM_ID")
-    private TeamJpql team;
+    private TeamJpql teamJpql;
 
+    public void changeTeam(TeamJpql teamJpql){
+        this.setTeamJpql(teamJpql);
+        teamJpql.getMembers().add(this);
+
+    }
     public Long getId() {
         return id;
     }
@@ -38,11 +43,20 @@ public class MemberJpql {
         this.age = age;
     }
 
-    public TeamJpql getTeam() {
-        return team;
+    public TeamJpql getTeamJpql() {
+        return teamJpql;
     }
 
-    public void setTeam(TeamJpql team) {
-        this.team = team;
+    public void setTeamJpql(TeamJpql teamJpql) {
+        this.teamJpql = teamJpql;
+    }
+
+    @Override
+    public String toString() {
+        return "MemberJpql{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
