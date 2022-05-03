@@ -4,6 +4,9 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="MEMBER_JPQL")
+@NamedQuery(
+        name = "MemberJpql.findByUsername",
+        query="select m from MemberJpql m where m.username = :username")
 public class MemberJpql {
     @Id @GeneratedValue
     private Long id;
